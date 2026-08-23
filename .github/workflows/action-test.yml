@@ -1,0 +1,24 @@
+name: stargazers-action-supabase
+
+on:
+  schedule:
+    - cron: '0 0 */30 * *' # Every 30 days
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Process all Starred Repositoties from an User
+      - name: Create star list
+        id: stargazers-action-supabase
+        uses: tutosrive/stargazers-action-supabase@v0.1.2
+        with:
+          github-user: ${{ github.actor }} # Or any GitHub Username
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          db-connection-url: ${{ secrets.DB_CONN_URL }} # Supabase connection string "postgresql://postgres..."
