@@ -1,9 +1,6 @@
 name: stargazers-action-supabase
 
 on:
-  schedule:
-    - cron: '0 0 */30 * *' # Every 30 days
-
   workflow_dispatch:
 
 jobs:
