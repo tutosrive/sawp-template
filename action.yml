@@ -2,7 +2,7 @@ name: 'SAWS'
 description: '"Stargazers Action With Supabase", get all user starred repositories and save it on Supabase Relational Database, by tutosrive.'
 branding:
     icon: 'database'
-    color: '#150029'
+    color: 'yellow'
 inputs:
     github-user:
         description: 'Github Username used as reference to get all it starred repositories'
@@ -17,5 +17,5 @@ inputs:
         required: true
         default: ''
 runs:
-    uses: 'node24'
+    using: 'node24'
     main: 'dist/index.js'
