@@ -6,10 +6,11 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    env:
+      NODE_OPTIONS: --dns-result-order=ipv4first
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       # Process all Starred Repositoties from an User
       - name: Create star list
