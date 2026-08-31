@@ -16,6 +16,6 @@ jobs:
         id: sawp-job
         uses: ./
         with:
-          github-user: ${{ secrets.GH_USER }} # Or any GitHub Username
+          github-user: ${{ github.actor }} # Or any GitHub Username
           github-token: ${{ secrets.GH_TOKEN }}
           db-connection-url: ${{ secrets.DB_CONN_URL }} # Supabase connection string "postgresql://postgres..."
