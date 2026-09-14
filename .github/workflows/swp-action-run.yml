@@ -13,7 +13,7 @@ jobs:
       - name: Preparar schema de BD
         run: |
           mkdir -p app/database
-          curl -fsSL https://raw.githubusercontent.com/tutosrive/sawp/main/app/database/tables.sql -o app/database/tables.sql
+          curl -fsSL https://raw.githubusercontent.com/tutosrive/sawp/master/app/database/tables.sql -o app/database/tables.sql
 
       # Process all Starred Repositoties from an User
       - name: SWP-action
