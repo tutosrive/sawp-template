@@ -10,10 +10,14 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v7
+      - name: Preparar schema de BD
+        run: |
+          mkdir -p app/database
+          curl -fsSL https://raw.githubusercontent.com/tutosrive/sawp/main/app/database/tables.sql -o app/database/tables.sql
 
       # Process all Starred Repositoties from an User
       - name: SWP-action
-        uses: tutosrive/sawp@v0.2.2.pre
+        uses: tutosrive/sawp@v0.2.0.release
         with:
           github-user: ${{ github.actor }} # Or any GitHub Username
           github-token: ${{ secrets.GH_TOKEN }}
